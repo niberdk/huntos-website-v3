@@ -10,9 +10,11 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    h1 em, h2 em { font-style: italic; color: var(--brass); }
+
     /* Page Hero */
     .page-hero {
       position: relative;
@@ -147,6 +149,7 @@
       font-weight: 700;
       color: var(--brass);
       margin-bottom: var(--space-xs);
+      text-shadow: 0 0 60px rgba(184, 151, 106, 0.25);
     }
 
     .cta-section__sub {
@@ -184,6 +187,9 @@
       color: var(--accent);
       flex-shrink: 0;
     }
+
+    .btn--glow { box-shadow: 0 0 30px rgba(107, 143, 91, 0.3), 0 0 60px rgba(107, 143, 91, 0.1); }
+    .btn--glow:hover { box-shadow: 0 0 40px rgba(107, 143, 91, 0.5), 0 0 80px rgba(107, 143, 91, 0.15); }
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -240,7 +246,7 @@
         <img src="images/oscar/oscar-backpack-full.jpg" alt="Oskar Schulz med huntOS jagtstolen på ryggen i naturen" data-parallax="0.15">
       </div>
       <div class="container page-hero__content">
-        <h1 class="reveal">Manden bag stolen</h1>
+        <h1 class="reveal">Manden bag <em>stolen</em></h1>
         <p class="lead reveal" data-delay="0.1">Oskar Schulz har jagtet i over 40 år. huntOS er bygget af en jæger, til jægere.</p>
       </div>
     </section>
@@ -253,7 +259,7 @@
             <img src="images/oscar/oscar-backpack.jpg" alt="Oskar Schulz bærer huntOS jagtstolen som rygsæk">
           </div>
           <div class="story-text reveal-right">
-            <h2>40 års erfaring i ét produkt</h2>
+            <h2>40 års erfaring i <em>ét produkt</em></h2>
             <p>Oskar Schulz er sønderjyde og har jagtet hele sit liv. Efter årtier med ustabile skydestole, kolde ben og upræcise skud besluttede han sig for at bygge den stol, han altid havde manglet.</p>
             <p>Resultatet er huntOS: en transportabel jagtstol med 360° rotation og stabilt anlæg, der giver præcise skud fra enhver vinkel.</p>
           </div>
@@ -278,7 +284,7 @@
       <div class="container">
         <div class="story-grid story-grid--reverse">
           <div class="story-text reveal-left">
-            <h2>Dansk produceret kvalitet</h2>
+            <h2>Dansk produceret <em>kvalitet</em></h2>
             <p>huntOS produceres i Danmark med fokus på holdbarhed og funktion. Formstøbt kvalitetsplast og aluminium sikrer en stol der holder til hårdt brug i mange sæsoner.</p>
             <p>Designet er patentanmeldt og opfylder Oskars krav: let, stabil, lydløs og klar på under ét minut.</p>
           </div>
@@ -292,13 +298,13 @@
     <!-- 5. CTA -->
     <section class="section-spacious">
       <div class="container cta-section">
-        <h2 class="reveal">Prøv Oskars stol</h2>
+        <h2 class="reveal">Prøv Oskars <em>stol</em></h2>
         <div class="reveal" data-delay="0.1">
           <div class="cta-section__price">3.500 kr.</div>
           <p class="cta-section__sub">Inkl. moms. Fragt fra 110 kr.</p>
         </div>
         <div class="cta-section__buttons reveal" data-delay="0.2">
-          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large" target="_blank" rel="noopener">Køb stolen</a>
+          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large btn--glow" target="_blank" rel="noopener">Køb stolen</a>
           <a href="kontakt.html" class="btn btn--secondary btn--large">Kontakt Oskar</a>
         </div>
         <div class="trust-badges reveal" data-delay="0.3">

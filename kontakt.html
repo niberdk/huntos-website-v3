@@ -10,15 +10,18 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    h1 em, h2 em { font-style: italic; color: var(--brass); }
+
     /* Page Hero (compact, no image) */
     .page-hero--compact {
+      position: relative;
       min-height: 40vh;
       display: flex;
       align-items: flex-end;
-      background: var(--bg-elevated);
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(107, 143, 91, 0.05) 100%);
       padding-top: var(--nav-height);
     }
 
@@ -204,6 +207,9 @@
         align-self: stretch;
       }
     }
+
+    .btn--glow { box-shadow: 0 0 30px rgba(107, 143, 91, 0.3), 0 0 60px rgba(107, 143, 91, 0.1); }
+    .btn--glow:hover { box-shadow: 0 0 40px rgba(107, 143, 91, 0.5), 0 0 80px rgba(107, 143, 91, 0.15); }
   </style>
 </head>
 <body>
@@ -232,7 +238,7 @@
     <!-- 1. Page Hero (compact, no image) -->
     <section class="page-hero--compact section-hero">
       <div class="container page-hero__content">
-        <h1 class="reveal">Kontakt os</h1>
+        <h1 class="reveal">Kontakt <em>os</em></h1>
         <p class="lead reveal" data-delay="0.1">Har du spørgsmål om huntOS jagtstolen? Skriv eller ring direkte til Oskar.</p>
       </div>
     </section>
@@ -297,9 +303,9 @@
     <!-- 3. CTA -->
     <section class="section-normal">
       <div class="container cta-section">
-        <h2 class="reveal">Klar til at prøve stolen?</h2>
+        <h2 class="reveal">Klar til at prøve <em>stolen?</em></h2>
         <div class="cta-section__buttons reveal" data-delay="0.1">
-          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large" target="_blank" rel="noopener">Køb stolen</a>
+          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large btn--glow" target="_blank" rel="noopener">Køb stolen</a>
         </div>
       </div>
     </section>

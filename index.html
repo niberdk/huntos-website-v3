@@ -12,9 +12,12 @@
   <meta property="og:locale" content="da_DK">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* === Italic Brass Accents === */
+    h1 em, h2 em { font-style: italic; color: var(--brass); }
+
     /* === Hero === */
     .hero {
       position: relative;
@@ -353,6 +356,7 @@
       color: var(--brass);
       line-height: 1.1;
       margin-bottom: var(--space-sm);
+      text-shadow: 0 0 60px rgba(184, 151, 106, 0.25);
     }
 
     .cta-section__sub {
@@ -398,6 +402,10 @@
       color: var(--text-muted);
       line-height: 1.4;
     }
+
+    /* === CTA Button Glow === */
+    .btn--glow { box-shadow: 0 0 30px rgba(107, 143, 91, 0.3), 0 0 60px rgba(107, 143, 91, 0.1); }
+    .btn--glow:hover { box-shadow: 0 0 40px rgba(107, 143, 91, 0.5), 0 0 80px rgba(107, 143, 91, 0.15); }
 
     /* === FAQ === */
     .faq__list {
@@ -527,7 +535,7 @@
       <div class="hero__overlay"></div>
       <div class="hero__content">
         <span class="label reveal" data-delay="0.2">Dansk jagtstol</span>
-        <h1 class="reveal" data-delay="0.4">Bygget til præcise skud og lang ventetid</h1>
+        <h1 class="reveal" data-delay="0.4">Bygget til <em>præcise skud</em> og lang ventetid</h1>
         <p class="lead hero__lead reveal" data-delay="0.6">Transportabel jagtstol med 360° rotation, stabilt anlæg og patentanmeldt design. Kun 6,5 kg.</p>
         <div class="hero__buttons reveal" data-delay="0.8">
           <a href="produktet.html" class="btn btn--primary btn--large">Se jagtstolen</a>
@@ -571,7 +579,7 @@
     <!-- 3. Brugsrejse -->
     <section class="section-spacious">
       <div class="container">
-        <h2 class="text-center reveal">Fra rygsæk til præcist skud</h2>
+        <h2 class="text-center reveal">Fra rygsæk til <em>præcist skud</em></h2>
         <div class="journey__grid" data-stagger>
           <div class="journey__step">
             <span class="journey__step-number">01</span>
@@ -605,7 +613,7 @@
             <img src="images/action/oscar-aiming-frontal.jpg" alt="Frontalt billede af Oscar der sigter fra jagtstolen med fuldt anlæg" loading="lazy">
           </div>
           <div class="showcase__text reveal-right">
-            <h2>Præcis skydestilling, hver gang</h2>
+            <h2><em>Præcis</em> skydestilling, hver gang</h2>
             <p>360° rotation giver dig fri bevægelse uden at flytte stolen. Anlægsbøjlen holder riflen stabilt, så du kan koncentrere dig om skuddet i stedet for balancen.</p>
           </div>
         </div>
@@ -617,7 +625,7 @@
       <div class="container">
         <div class="showcase showcase--right">
           <div class="showcase__text reveal-left">
-            <h2>Bæres som en rygsæk. Kun 6,5 kg.</h2>
+            <h2>Bæres som en rygsæk. Kun <em>6,5 kg.</em></h2>
             <p>Integrerede rygsækstropper fordeler vægten jævnt. Gå kilometervis gennem terrænet med stolen på ryggen og riflen i hånden.</p>
           </div>
           <div class="showcase__image reveal-right">
@@ -630,7 +638,7 @@
     <!-- 6. Tre nøglekomponenter -->
     <section class="section-tight" style="background: var(--bg-elevated);">
       <div class="container">
-        <h2 class="text-center reveal">Tre nøglekomponenter</h2>
+        <h2 class="text-center reveal">Tre <em>nøglekomponenter</em></h2>
         <div class="components__grid" data-stagger>
           <div class="component-card">
             <img class="component-card__img" src="images/detail/teleskopstang.jpg" alt="Nærbillede af teleskopstangen med justerbar højde og vinkel" loading="lazy">
@@ -660,7 +668,7 @@
     <!-- 7. Video Sektion -->
     <section class="section-spacious" id="video">
       <div class="container">
-        <h2 class="text-center reveal">Se stolen i brug</h2>
+        <h2 class="text-center reveal">Se stolen <em>i brug</em></h2>
         <div class="video-section__wrapper reveal-scale">
           <video controls playsinline preload="metadata" poster="images/hero/hero-action.jpg">
             <source src="images/video-demo.mp4" type="video/mp4">
@@ -692,7 +700,7 @@
           <p class="cta-section__sub">Inkl. moms. Fragt fra 110 kr.</p>
         </div>
         <div class="cta-section__buttons reveal" data-delay="0.2">
-          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large" target="_blank" rel="noopener">Køb stolen</a>
+          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large btn--glow" target="_blank" rel="noopener">Køb stolen</a>
           <a href="kontakt.html" class="btn btn--secondary btn--large">Kontakt Oskar</a>
         </div>
         <div class="trust-badges" data-stagger>
@@ -729,7 +737,7 @@
     <!-- 10. FAQ -->
     <section class="section-tight">
       <div class="container">
-        <h2 class="text-center reveal">Ofte stillede spørgsmål</h2>
+        <h2 class="text-center reveal">Ofte stillede <em>spørgsmål</em></h2>
         <div class="faq__list reveal" data-delay="0.15">
           <details class="faq__item">
             <summary>Hvad vejer stolen?</summary>

@@ -90,23 +90,7 @@
       width: 100%;
       height: auto;
       display: block;
-      -webkit-mask-image: radial-gradient(
-        ellipse 80% 78% at 50% 50%,
-        black 25%,
-        rgba(0,0,0,0.85) 38%,
-        rgba(0,0,0,0.5) 52%,
-        rgba(0,0,0,0.15) 65%,
-        transparent 75%
-      );
-      mask-image: radial-gradient(
-        ellipse 80% 78% at 50% 50%,
-        black 25%,
-        rgba(0,0,0,0.85) 38%,
-        rgba(0,0,0,0.5) 52%,
-        rgba(0,0,0,0.15) 65%,
-        transparent 75%
-      );
-      filter: brightness(0.95) contrast(1.05);
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)) drop-shadow(0 8px 16px rgba(0,0,0,0.3));
     }
 
     /* Hero Stats */
@@ -817,7 +801,7 @@
       </h1>
 
       <div class="product-hero__image reveal-scale" data-delay="0.2">
-        <img src="images/product/chair-3quarter.jpg" alt="huntOS jagtstol, 3/4 vinkel, fuldt opsat" data-parallax="0.08">
+        <img src="images/product/chair-3quarter.png" alt="huntOS jagtstol, 3/4 vinkel, fuldt opsat" data-parallax="0.08">
       </div>
 
       <div class="hero-stats" data-stagger>
@@ -844,26 +828,26 @@
     <!-- Gallery strip: multiple product views -->
     <section style="background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
       <div class="gallery-strip" data-gallery>
-        <button class="gallery-strip__item active" data-gallery-thumb="images/product/chair-3quarter.jpg" aria-label="3/4 vinkel">
-          <img src="images/product/chair-3quarter.jpg" alt="3/4 vinkel">
+        <button class="gallery-strip__item active" data-gallery-thumb="images/product/chair-3quarter.png" aria-label="3/4 vinkel">
+          <img src="images/product/chair-3quarter.png" alt="3/4 vinkel">
         </button>
-        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-front-clean.jpg" aria-label="Forfra">
-          <img src="images/product/chair-front-clean.jpg" alt="Forfra">
+        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-front-clean.png" aria-label="Forfra">
+          <img src="images/product/chair-front-clean.png" alt="Forfra">
         </button>
-        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-side-arm.jpg" aria-label="Sideprofil">
-          <img src="images/product/chair-side-arm.jpg" alt="Sideprofil med anlægsbøjle">
+        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-side-arm.png" aria-label="Sideprofil">
+          <img src="images/product/chair-side-arm.png" alt="Sideprofil med anlægsbøjle">
         </button>
-        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-side-profile.jpg" aria-label="Profil">
-          <img src="images/product/chair-side-profile.jpg" alt="Side profil">
+        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-side-profile.png" aria-label="Profil">
+          <img src="images/product/chair-side-profile.png" alt="Side profil">
         </button>
-        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-rear-view.jpg" aria-label="Bagfra">
-          <img src="images/product/chair-rear-view.jpg" alt="Bagfra">
+        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-rear-view.png" aria-label="Bagfra">
+          <img src="images/product/chair-rear-view.png" alt="Bagfra">
         </button>
-        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-backpack-rear.jpg" aria-label="Rygsæk">
-          <img src="images/product/chair-backpack-rear.jpg" alt="Rygsæk transport">
+        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-backpack-rear.png" aria-label="Rygsæk">
+          <img src="images/product/chair-backpack-rear.png" alt="Rygsæk transport">
         </button>
-        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-front.jpg" aria-label="Opsat forfra">
-          <img src="images/product/chair-front.jpg" alt="Opsat forfra">
+        <button class="gallery-strip__item" data-gallery-thumb="images/product/chair-3quarter-alt.png" aria-label="Alternativ vinkel">
+          <img src="images/product/chair-3quarter-alt.png" alt="Alternativ 3/4 vinkel">
         </button>
       </div>
     </section>
