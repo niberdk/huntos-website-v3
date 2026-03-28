@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>huntOS Jagtstol | Dansk jagtstol med 360° rotation</title>
+  <meta name="description" content="huntOS er en dansk, transportabel jagtstol med 360° rotation og stabilt anlæg. Kun 6,5 kg. Patentanmeldt design bygget af en jæger med 40+ års erfaring.">
+  <meta property="og:title" content="huntOS Jagtstol | Dansk jagtstol med 360° rotation">
+  <meta property="og:description" content="Transportabel jagtstol med 360° rotation, stabilt anlæg og patentanmeldt design. Kun 6,5 kg.">
+  <meta property="og:image" content="images/hero/hero-main.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* === Hero === */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero__image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 15, 10, 0.15) 0%,
+        rgba(10, 15, 10, 0.3) 40%,
+        rgba(10, 15, 10, 0.75) 70%,
+        var(--bg-base) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      padding: 0 var(--space-xl) var(--space-5xl);
+      max-width: var(--container-max);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero__content .label {
+      margin-bottom: var(--space-md);
+    }
+
+    .hero__content h1 {
+      max-width: 14ch;
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero__lead {
+      max-width: 48ch;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .hero__buttons {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: var(--space-xl);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity var(--duration-normal);
+    }
+
+    .hero__scroll:hover {
+      opacity: 1;
+    }
+
+    .hero__scroll svg {
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* === Specs Strip === */
+    .specs-strip {
+      background: var(--bg-elevated);
+    }
+
+    .specs-strip__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-xl);
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+
+    .specs-strip__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .specs-strip__value {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--brass);
+      line-height: 1.1;
+    }
+
+    .specs-strip__label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* === Journey === */
+    .journey__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-xl);
+      margin-top: var(--space-3xl);
+    }
+
+    .journey__step {
+      position: relative;
+    }
+
+    .journey__step-number {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: var(--space-md);
+    }
+
+    .journey__step-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .journey__step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      margin-bottom: 0;
+    }
+
+    /* === Showcase Rows === */
+    .showcase {
+      display: grid;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .showcase--left {
+      grid-template-columns: 7fr 3fr;
+    }
+
+    .showcase--right {
+      grid-template-columns: 3fr 7fr;
+    }
+
+    .showcase__image {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+
+    .showcase__image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-out);
+    }
+
+    .showcase__image:hover img {
+      transform: scale(1.03);
+    }
+
+    .showcase__text h2 {
+      margin-bottom: var(--space-lg);
+    }
+
+    .showcase__text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* === Components === */
+    .components__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+
+    .component-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--duration-normal) var(--ease-out),
+                  box-shadow var(--duration-normal) var(--ease-out);
+    }
+
+    .component-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .component-card__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .component-card__body {
+      padding: var(--space-lg);
+    }
+
+    .component-card__body h3 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .component-card__body p {
+      font-size: 0.95rem;
+    }
+
+    /* === Video === */
+    .video-section__wrapper {
+      max-width: 960px;
+      margin: var(--space-2xl) auto 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .video-section__wrapper video {
+      width: 100%;
+      display: block;
+    }
+
+    /* === Quote === */
+    .quote-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section__bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .quote-section__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .quote-section__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 15, 10, 0.82);
+    }
+
+    .quote-section__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 50ch;
+      margin: 0 auto;
+    }
+
+    .quote-section blockquote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin-bottom: var(--space-xl);
+    }
+
+    .quote-section blockquote::before {
+      content: '\201C';
+      display: block;
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.5;
+      line-height: 0.8;
+      margin-bottom: var(--space-md);
+    }
+
+    .quote-section__attr {
+      font-weight: 600;
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: var(--space-xs);
+    }
+
+    .quote-section__role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* === CTA Section === */
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-section__price {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--brass);
+      line-height: 1.1;
+      margin-bottom: var(--space-sm);
+    }
+
+    .cta-section__sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .cta-section__buttons {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-xl);
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: var(--space-2xl);
+      border-top: 1px solid var(--border-light);
+    }
+
+    .trust-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      text-align: center;
+    }
+
+    .trust-badge svg {
+      width: 32px;
+      height: 32px;
+      color: var(--accent);
+    }
+
+    .trust-badge span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* === FAQ === */
+    .faq__list {
+      max-width: 720px;
+      margin: var(--space-2xl) auto 0;
+    }
+
+    .faq__item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq__item summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: var(--space-lg) 0;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      list-style: none;
+      min-height: 48px;
+    }
+
+    .faq__item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq__item summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-left: var(--space-md);
+      transition: transform var(--duration-normal) var(--ease-out);
+    }
+
+    .faq__item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq__item p {
+      padding-bottom: var(--space-lg);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .hero__content {
+        padding: 0 var(--space-lg) var(--space-3xl);
+      }
+
+      .hero__scroll {
+        display: none;
+      }
+
+      .specs-strip__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+      }
+
+      .journey__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+      }
+
+      .showcase--left,
+      .showcase--right {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase--right .showcase__text {
+        order: -1;
+      }
+
+      .components__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-badges {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .journey__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .specs-strip__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-text">huntOS</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="produktet.html">Produktet</a></li>
+        <li><a href="om-oscar.html">Om Oskar</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a href="https://huntos.dk/vare/huntos-stol/" class="nav__cta" target="_blank" rel="noopener">Køb stolen</a>
+      <button class="nav__toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 1. Hero -->
+    <section class="hero section-hero">
+      <div class="hero__image">
+        <img src="images/hero/hero-main.jpg" alt="Jæger sigter fra huntOS jagtstolen i dansk vildmark ved solopgang" loading="eager">
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <span class="label reveal" data-delay="0.2">Dansk jagtstol</span>
+        <h1 class="reveal" data-delay="0.4">Bygget til præcise skud og lang ventetid</h1>
+        <p class="lead hero__lead reveal" data-delay="0.6">Transportabel jagtstol med 360° rotation, stabilt anlæg og patentanmeldt design. Kun 6,5 kg.</p>
+        <div class="hero__buttons reveal" data-delay="0.8">
+          <a href="produktet.html" class="btn btn--primary btn--large">Se jagtstolen</a>
+          <a href="#video" class="btn btn--secondary btn--large">Se den i brug</a>
+        </div>
+      </div>
+      <a href="#specs" class="hero__scroll" aria-label="Scroll ned">
+        <svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="18" height="26" rx="9" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="10" cy="9" r="2" fill="currentColor"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- 2. Quick Specs Strip -->
+    <section class="specs-strip section-tight" id="specs">
+      <div class="container">
+        <div class="divider divider--center"></div>
+        <div class="specs-strip__grid" data-stagger>
+          <div class="specs-strip__item">
+            <span class="specs-strip__value" data-count="6.5" data-suffix=" kg">0 kg</span>
+            <span class="specs-strip__label">Total vægt</span>
+          </div>
+          <div class="specs-strip__item">
+            <span class="specs-strip__value" data-count="360" data-suffix="°">0°</span>
+            <span class="specs-strip__label">Rotation</span>
+          </div>
+          <div class="specs-strip__item">
+            <span class="specs-strip__value">&lt; 1 min</span>
+            <span class="specs-strip__label">Samletid</span>
+          </div>
+          <div class="specs-strip__item">
+            <span class="specs-strip__value">Dansk</span>
+            <span class="specs-strip__label">Produceret</span>
+          </div>
+        </div>
+        <div class="divider divider--center"></div>
+      </div>
+    </section>
+
+    <!-- 3. Brugsrejse -->
+    <section class="section-spacious">
+      <div class="container">
+        <h2 class="text-center reveal">Fra rygsæk til præcist skud</h2>
+        <div class="journey__grid" data-stagger>
+          <div class="journey__step">
+            <span class="journey__step-number">01</span>
+            <img class="journey__step-img" src="images/action/oscar-backpack-standing.jpg" alt="Oscar bærer huntOS jagtstolen på ryggen gennem skoven" loading="lazy">
+            <h3>Bær den på ryggen</h3>
+          </div>
+          <div class="journey__step">
+            <span class="journey__step-number">02</span>
+            <img class="journey__step-img" src="images/action/setup-02-unfold.jpg" alt="Jagtstolen foldes ud og stilles op på under ét minut" loading="lazy">
+            <h3>Stil op på under ét minut</h3>
+          </div>
+          <div class="journey__step">
+            <span class="journey__step-number">03</span>
+            <img class="journey__step-img" src="images/action/oscar-aiming-profile.jpg" alt="Oscar sidder stabilt i stolen og sigter med riflen" loading="lazy">
+            <h3>Sid stabilt, sigt præcist</h3>
+          </div>
+          <div class="journey__step">
+            <span class="journey__step-number">04</span>
+            <img class="journey__step-img" src="images/action/oscar-walking.jpg" alt="Oscar klapper stolen sammen og går videre i terrænet" loading="lazy">
+            <h3>Klap sammen og videre</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Showcase Row 1 -->
+    <section class="section-normal">
+      <div class="container">
+        <div class="showcase showcase--left">
+          <div class="showcase__image reveal-left">
+            <img src="images/action/oscar-aiming-frontal.jpg" alt="Frontalt billede af Oscar der sigter fra jagtstolen med fuldt anlæg" loading="lazy">
+          </div>
+          <div class="showcase__text reveal-right">
+            <h2>Præcis skydestilling, hver gang</h2>
+            <p>360° rotation giver dig fri bevægelse uden at flytte stolen. Anlægsbøjlen holder riflen stabilt, så du kan koncentrere dig om skuddet i stedet for balancen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Showcase Row 2 -->
+    <section class="section-normal">
+      <div class="container">
+        <div class="showcase showcase--right">
+          <div class="showcase__text reveal-left">
+            <h2>Bæres som en rygsæk. Kun 6,5 kg.</h2>
+            <p>Integrerede rygsækstropper fordeler vægten jævnt. Gå kilometervis gennem terrænet med stolen på ryggen og riflen i hånden.</p>
+          </div>
+          <div class="showcase__image reveal-right">
+            <img src="images/action/oscar-walking-away.jpg" alt="Oscar går væk med jagtstolen på ryggen gennem efterårslandskabet" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Tre nøglekomponenter -->
+    <section class="section-tight" style="background: var(--bg-elevated);">
+      <div class="container">
+        <h2 class="text-center reveal">Tre nøglekomponenter</h2>
+        <div class="components__grid" data-stagger>
+          <div class="component-card">
+            <img class="component-card__img" src="images/detail/teleskopstang.jpg" alt="Nærbillede af teleskopstangen med justerbar højde og vinkel" loading="lazy">
+            <div class="component-card__body">
+              <h3>Teleskopstang</h3>
+              <p>Justerbar højde og vinkel. Lydløs betjening med en hånd.</p>
+            </div>
+          </div>
+          <div class="component-card">
+            <img class="component-card__img" src="images/detail/klips.jpg" alt="Nærbillede af klipsen der holder anlægsbøjlen fast under transport" loading="lazy">
+            <div class="component-card__body">
+              <h3>Klips</h3>
+              <p>Holder anlægsbøjlen fast under transport. Klik ind, klik ud.</p>
+            </div>
+          </div>
+          <div class="component-card">
+            <img class="component-card__img" src="images/detail/anlaegsbojle.jpg" alt="Nærbillede af anlægsbøjlen der giver stabilt anlæg med 360° rotation" loading="lazy">
+            <div class="component-card__body">
+              <h3>Anlægsbøjle</h3>
+              <p>Fast, stabilt anlæg der følger med stolens 360° rotation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Video Sektion -->
+    <section class="section-spacious" id="video">
+      <div class="container">
+        <h2 class="text-center reveal">Se stolen i brug</h2>
+        <div class="video-section__wrapper reveal-scale">
+          <video controls playsinline preload="metadata" poster="images/hero/hero-action.jpg">
+            <source src="images/video-demo.mp4" type="video/mp4">
+            Din browser understøtter ikke video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Oscar-citat -->
+    <section class="quote-section section-spacious">
+      <div class="quote-section__bg">
+        <img src="images/hero/hero-kikkert.jpg" alt="Oscar kigger ud over landskabet med kikkert" loading="lazy">
+      </div>
+      <div class="container">
+        <div class="quote-section__content reveal">
+          <blockquote>Min mission udsprang af mit eget behov. Efter 40 års jagt vidste jeg præcis, hvilken stol jeg manglede. Så jeg byggede den.</blockquote>
+          <span class="quote-section__attr">Oskar Schulz</span>
+          <span class="quote-section__role">Jæger i over 40 år, grundlægger af huntOS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA Sektion -->
+    <section class="cta-section section-spacious">
+      <div class="container">
+        <div class="reveal">
+          <div class="cta-section__price">3.500 kr.</div>
+          <p class="cta-section__sub">Inkl. moms. Fragt fra 110 kr.</p>
+        </div>
+        <div class="cta-section__buttons reveal" data-delay="0.2">
+          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large" target="_blank" rel="noopener">Køb stolen</a>
+          <a href="kontakt.html" class="btn btn--secondary btn--large">Kontakt Oskar</a>
+        </div>
+        <div class="trust-badges" data-stagger>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12l2-2m0 0l4 4 8-8 2 2-10 10-6-6z"/>
+            </svg>
+            <span>14 dages returret</span>
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a4 4 0 00-8 0v2"/>
+            </svg>
+            <span>1-3 dages levering</span>
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <span>Dansk produceret</span>
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.25 5.25-1.1 9-6 9-11.25V7l-9-5z"/>
+            </svg>
+            <span>Patentanmeldt</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section class="section-tight">
+      <div class="container">
+        <h2 class="text-center reveal">Ofte stillede spørgsmål</h2>
+        <div class="faq__list reveal" data-delay="0.15">
+          <details class="faq__item">
+            <summary>Hvad vejer stolen?</summary>
+            <p>6,5 kg inkl. alle dele og rygsækstropper. Let nok til lange ture i terrænet.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Kan den bruges til hagljagt?</summary>
+            <p>Ja. Anlægsbøjlen kan monteres bag ryglænet, så du har frit sving med haglgeværet.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Hvordan er returret?</summary>
+            <p>14 dages fuld returret. Vi betaler returfragten hvis du ikke er tilfreds.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Hvor hurtigt leveres den?</summary>
+            <p>1-3 hverdage med PostNord. Fragt fra 110 kr.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__brand-name">huntOS</div>
+          <p>huntOS ApS<br>Langhus 19<br>6200 Aabenraa<br>CVR: 44566133</p>
+        </div>
+        <div class="footer__col">
+          <h4>Sider</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="produktet.html">Produktet</a></li>
+            <li><a href="om-oscar.html">Om Oskar</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Kontakt</h4>
+          <ul class="footer__links">
+            <li><a href="https://huntos.dk/vare/huntos-stol/" target="_blank" rel="noopener">Køb stolen</a></li>
+            <li><a href="mailto:oskar@huntos.dk">oskar@huntos.dk</a></li>
+            <li><a href="tel:+4592921207">+45 92 92 12 07</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 huntOS ApS. Alle rettigheder forbeholdes.</span>
+        <a href="mailto:oskar@huntos.dk">oskar@huntos.dk</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <div class="sticky-cta__inner">
+      <div class="sticky-cta__price">3.500 kr. <span>Inkl. moms</span></div>
+      <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary" target="_blank" rel="noopener">Køb stolen</a>
+    </div>
+  </div>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

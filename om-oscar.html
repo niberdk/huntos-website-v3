@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Oskar | huntOS</title>
+  <meta name="description" content="Mød Oskar Schulz, manden bag huntOS jagtstolen. 40 års jagterfaring omdannet til ét produkt. Dansk design, dansk produktion.">
+  <meta property="og:title" content="Om Oskar | huntOS">
+  <meta property="og:description" content="Oskar Schulz har jagtet i over 40 år. huntOS jagtstolen er bygget af en jæger, til jægere.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page Hero */
+    .page-hero {
+      position: relative;
+      height: 50vh;
+      min-height: 380px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .page-hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .page-hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .page-hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg-base) 0%, rgba(10, 15, 10, 0.45) 50%, rgba(10, 15, 10, 0.25) 100%);
+    }
+
+    .page-hero__content {
+      position: relative;
+      z-index: 1;
+      padding-bottom: var(--space-3xl);
+    }
+
+    .page-hero__content h1 {
+      margin-bottom: var(--space-md);
+    }
+
+    .page-hero__content .lead {
+      max-width: 600px;
+    }
+
+    /* Story section */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+    }
+
+    .story-grid--reverse {
+      grid-template-columns: 1fr 1.1fr;
+    }
+
+    .story-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .story-image img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+
+    .story-text h2 {
+      margin-bottom: var(--space-lg);
+    }
+
+    .story-text p {
+      line-height: 1.85;
+    }
+
+    .story-text p + p {
+      margin-top: var(--space-lg);
+    }
+
+    /* Quote section */
+    .quote-section {
+      text-align: center;
+      padding: var(--space-5xl) 0;
+    }
+
+    .quote-section blockquote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text-primary);
+      max-width: 750px;
+      margin: 0 auto var(--space-xl);
+      position: relative;
+    }
+
+    .quote-section blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: -0.5em;
+      left: -0.6em;
+      font-size: 4em;
+      color: var(--accent);
+      opacity: 0.3;
+      font-style: normal;
+      line-height: 1;
+    }
+
+    .quote-section cite {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--brass);
+      letter-spacing: 0.05em;
+    }
+
+    /* CTA section */
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      margin-bottom: var(--space-lg);
+    }
+
+    .cta-section__price {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--brass);
+      margin-bottom: var(--space-xs);
+    }
+
+    .cta-section__sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .cta-section__buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .trust-badges {
+      display: flex;
+      gap: var(--space-2xl);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .trust-badge svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .story-grid,
+      .story-grid--reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+      }
+
+      .story-image img {
+        aspect-ratio: 16 / 10;
+      }
+
+      .page-hero {
+        height: 45vh;
+        min-height: 300px;
+      }
+
+      .quote-section blockquote::before {
+        position: static;
+        display: block;
+        font-size: 3em;
+        margin-bottom: -0.4em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-text">huntOS</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="produktet.html">Produktet</a></li>
+        <li><a href="om-oscar.html">Om Oskar</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a href="https://huntos.dk/vare/huntos-stol/" class="nav__cta" target="_blank" rel="noopener">Køb stolen</a>
+      <button class="nav__toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 1. Page Hero -->
+    <section class="page-hero section-hero">
+      <div class="page-hero__bg">
+        <img src="images/oscar/oscar-backpack-full.jpg" alt="Oskar Schulz med huntOS jagtstolen på ryggen i naturen" data-parallax="0.15">
+      </div>
+      <div class="container page-hero__content">
+        <h1 class="reveal">Manden bag stolen</h1>
+        <p class="lead reveal" data-delay="0.1">Oskar Schulz har jagtet i over 40 år. huntOS er bygget af en jæger, til jægere.</p>
+      </div>
+    </section>
+
+    <!-- 2. Oskar's Historie -->
+    <section class="section-spacious">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-image reveal-left">
+            <img src="images/oscar/oscar-backpack.jpg" alt="Oskar Schulz bærer huntOS jagtstolen som rygsæk">
+          </div>
+          <div class="story-text reveal-right">
+            <h2>40 års erfaring i ét produkt</h2>
+            <p>Oskar Schulz er sønderjyde og har jagtet hele sit liv. Efter årtier med ustabile skydestole, kolde ben og upræcise skud besluttede han sig for at bygge den stol, han altid havde manglet.</p>
+            <p>Resultatet er huntOS: en transportabel jagtstol med 360° rotation og stabilt anlæg, der giver præcise skud fra enhver vinkel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Citat -->
+    <section class="quote-section" style="background: var(--bg-elevated);">
+      <div class="container container--narrow">
+        <div class="reveal-scale">
+          <blockquote>
+            Min mission udsprang af mit eget behov. Jeg vidste præcis, hvilken stol der manglede på markedet. Så jeg brugte tre år på at bygge den.
+          </blockquote>
+          <cite>Oskar Schulz</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Produktion -->
+    <section class="section-normal">
+      <div class="container">
+        <div class="story-grid story-grid--reverse">
+          <div class="story-text reveal-left">
+            <h2>Dansk produceret kvalitet</h2>
+            <p>huntOS produceres i Danmark med fokus på holdbarhed og funktion. Formstøbt kvalitetsplast og aluminium sikrer en stol der holder til hårdt brug i mange sæsoner.</p>
+            <p>Designet er patentanmeldt og opfylder Oskars krav: let, stabil, lydløs og klar på under ét minut.</p>
+          </div>
+          <div class="story-image reveal-right">
+            <img src="images/product/chair-rotation.jpg" alt="huntOS jagtstolen med 360 graders rotation">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="section-spacious">
+      <div class="container cta-section">
+        <h2 class="reveal">Prøv Oskars stol</h2>
+        <div class="reveal" data-delay="0.1">
+          <div class="cta-section__price">3.500 kr.</div>
+          <p class="cta-section__sub">Inkl. moms. Fragt fra 110 kr.</p>
+        </div>
+        <div class="cta-section__buttons reveal" data-delay="0.2">
+          <a href="https://huntos.dk/vare/huntos-stol/" class="btn btn--primary btn--large" target="_blank" rel="noopener">Køb stolen</a>
+          <a href="kontakt.html" class="btn btn--secondary btn--large">Kontakt Oskar</a>
+        </div>
+        <div class="trust-badges reveal" data-delay="0.3">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Dansk produceret</span>
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <span>Patentanmeldt design</span>
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Sendes fra Aabenraa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__brand-name">huntOS</div>
+          <p>huntOS ApS<br>Langhus 19<br>6200 Aabenraa<br>CVR: 44566133</p>
+        </div>
+        <div class="footer__col">
+          <h4>Sider</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="produktet.html">Produktet</a></li>
+            <li><a href="om-oscar.html">Om Oskar</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Kontakt</h4>
+          <ul class="footer__links">
+            <li><a href="https://huntos.dk/vare/huntos-stol/" target="_blank" rel="noopener">Køb stolen</a></li>
+            <li><a href="mailto:oskar@huntos.dk">oskar@huntos.dk</a></li>
+            <li><a href="tel:+4592921207">+45 92 92 12 07</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 huntOS ApS. Alle rettigheder forbeholdes.</span>
+        <a href="mailto:oskar@huntos.dk">oskar@huntos.dk</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
