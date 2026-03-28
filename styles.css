@@ -188,6 +188,9 @@ section {
   height: var(--nav-height);
   display: flex;
   align-items: center;
+  background: rgba(10, 15, 10, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: background var(--duration-normal) var(--ease-out),
               backdrop-filter var(--duration-normal) var(--ease-out);
 }
